@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+.bg-main {
+  background-color: #0D0D0D;
+}
+
+.bg-header {
+  background-color: #111522;
+}
+
+.bg-card {
+  background-color: #1C1C1C;
+}
+
+.card {
+  aspect-ratio: 1;
+  /* position: relative; */
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-front,
+.card-back {
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.card-front {
+  /* background: linear-gradient(to bottom, #0f172a, #0b0f1a); */
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+  z-index: 1;
+}
+
+.card-back {
+  /* background: #1e1e1e; */
+  font-size: 4rem;
+  z-index: 0;
+}
+
+.card.flipped .card-front {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.9);
+}
+
+.card.flipped .card-back {
+  opacity: 1;
+}
+
+.card.matched {
+  pointer-events: none;
+}
+
+.card.matched .card-back {
+  background: rgba(126, 211, 33, 0.2);
+  box-shadow: 0 0 20px rgba(126, 211, 33, 0.4);
+  border: 2px solid rgba(126, 211, 33, 0.5);
+}
+
+.reset-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
